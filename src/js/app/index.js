@@ -1,9 +1,17 @@
-import Toast  from '../modules/toast'
+import Toast from '../modules/toast'
 import Event from '../modules/event'
 import '../../style/style.scss'
-import '../modules/event'
+import NoteManager from '../modules/noteManager'
+import WaterFall from '../modules/waterFall'
+import Note from '../modules/note'
+import $ from 'jquery'
 
-// let p = document.createElement('p')
-// p.innerText = 'hello shit'
-// document.body.appendChild(p)
-Toast('hello', 1000)
+NoteManager.loadNotes()
+
+$('.add-note').on('click', function() {
+  NoteManager.createNewNote()
+})
+
+Event.on('waterfall', function(){
+  WaterFall.init($('#note-container'))
+})

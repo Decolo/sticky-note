@@ -40,5 +40,5 @@ module.exports = {
       $: 'jquery'
     }),
   ],
-  devtool: 'eval',
+  devtool: 'source-map',
 }
