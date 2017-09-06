@@ -20,7 +20,7 @@ export default class Note {
 
   createNote() {
     const date = new Date()
-    const dateStr = `${date.getFullYear()}／${date.getMonth() + 1}／${date.getDate()}`
+    const dateStr = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
     const template = `
       <div class="note">
         <div class="note-head">${dateStr}<span class="delete">&times;</span></div>

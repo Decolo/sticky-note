@@ -24,6 +24,10 @@ module.exports = {
         loader: 'style!css',
       },
       {
+        test: /\.(png|jpg)$/,
+　　　　　loader: 'url-loader?limit=8192',
+      },
+      {
         test: /\.scss$/,
         use: [{
             loader: "style-loader" // creates style nodes from JS strings
@@ -32,7 +36,7 @@ module.exports = {
         }, {
             loader: "sass-loader" // compiles Sass to CSS
         }]
-        }
+      },
     ]
   },
   plugins: [

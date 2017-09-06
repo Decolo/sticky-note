@@ -1,5 +1,13 @@
 @import './normalize.css';
 @import './reset.css';
+html,body{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../imgs/bg.png');
+}
 .toast-container{
     position: absolute;
     left: 50%;
@@ -13,23 +21,42 @@
 }
 #note-container{
     position: relative;
-    margin-top: 20px;
-}
-.note{
-    width: 200px;
-    min-height: 200px;
-    position: absolute;
-    .note-head{
-        padding: 5px 10px;
-    }
-    .note-content{
-        border: none;
-        outline: none;
-        padding: 10px;
-    }
-    box-shadow: 0 1px 2px #aaa;
-    .draggable{
-        position: relative;
-        top: 10px;
+    margin: 40px;
+    .note{
+        margin: 0 10px 20px 10px;
+        width: 200px;
+        min-height: 200px;
+        position: absolute;
+        background-color: #D9C44F;
+        font-weight: 600;
+        color: #333;
+        .note-head{
+            padding: 5px 10px;
+            text-align: center;
+            position: relative;
+            .delete{
+                position: absolute;
+                right: 4px;
+                top: 2px;
+                transition: .3s;
+                // transform: rotate(45deg);
+                opacity: .4;
+            }
+            .delete:hover{
+                // transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+        .note-content{
+            border: none;
+            outline: none;
+            padding: 10px;
+            
+        }
+        box-shadow: 0 2px 4px #36675A;
+        .draggable{
+            position: relative;
+            top: 10px;
+        }
     }
 }

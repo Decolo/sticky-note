@@ -24,6 +24,7 @@ var WaterFall = (function(){
       })
 
       colSumHeight[minIndex] += $item.outerHeight(true)
+      $container.height(colSumHeight[minIndex])
     })
   }
 
