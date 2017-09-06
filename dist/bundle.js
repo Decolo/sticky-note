@@ -10505,7 +10505,7 @@ class Note {
 
   createNote() {
     const date = new Date();
-    const dateStr = `${date.getFullYear()}／${date.getMonth() + 1}／${date.getDate()}`;
+    const dateStr = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
     const template = `
       <div class="note">
         <div class="note-head">${dateStr}<span class="delete">&times;</span></div>
@@ -10621,9 +10621,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_event__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_style_scss__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_style_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_noteManager__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_noteManager__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_note__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_waterFall__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_waterFall__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
 
@@ -10666,7 +10666,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(10)(content, options);
+var update = __webpack_require__(11)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -10692,7 +10692,7 @@ exports.i(__webpack_require__(8), "");
 exports.i(__webpack_require__(9), "");
 
 // module
-exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../imgs/bg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + "); }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n#note-container {\n  position: relative;\n  margin: 40px;\n  border: 1px solid red; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 200px;\n    min-height: 200px;\n    position: absolute;\n    box-shadow: 0 1px 2px #aaa; }\n    #note-container .note .note-head {\n      padding: 5px 10px; }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
+exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(10) + "); }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n#note-container {\n  position: relative;\n  margin: 40px; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 200px;\n    min-height: 200px;\n    position: absolute;\n    background-color: #D9C44F;\n    font-weight: 600;\n    color: #333;\n    box-shadow: 0 2px 4px #36675A; }\n    #note-container .note .note-head {\n      padding: 5px 10px;\n      text-align: center;\n      position: relative; }\n      #note-container .note .note-head .delete {\n        position: absolute;\n        right: 4px;\n        top: 2px;\n        transition: .3s;\n        opacity: .4; }\n      #note-container .note .note-head .delete:hover {\n        opacity: 1; }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
 
 // exports
 
@@ -10727,6 +10727,12 @@ exports.push([module.i, "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: b
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9a6feac0b188b99787974e479b5a1e49.png";
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -10772,7 +10778,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(11);
+var	fixUrls = __webpack_require__(12);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -11085,7 +11091,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 
@@ -11180,7 +11186,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11230,7 +11236,7 @@ const NoteManager = function () {
 /* unused harmony default export */ var _unused_webpack_default_export = (NoteManager);
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
