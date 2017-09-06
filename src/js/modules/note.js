@@ -7,7 +7,8 @@ export default class Note {
     this.defaultOpts = {
       id: '', //note的id
       $ct: $('#note-container').length > 0 ? $('#note-container') : $('body'),
-      placeholderText: 'Write down your note here'
+      placeholderText: 'Write down your note here',
+      content: ''
     }
     this.opts = Object.assign({}, this.defaultOpts, opts)
     this.id = this.opts.id
@@ -27,9 +28,16 @@ export default class Note {
       </div>
     `
     this.$note = $(template)
-    // 设置placeholder
-    this.$note.find('.note-content').html(this.opts.placeholderText)
-    this.opts.$ct.append(this.$note)
+    if (!this.id) {
+      // 设置placeholder
+      this.$note.find('.note-content').html(this.opts.placeholderText)
+      this.opts.$ct.append(this.$note)
+    } else {
+      this.$note.find('.note-content').html(this.opts.content)
+      this.opts.$ct.append(this.$note)
+    }
+    
+    
     // if (!this.id) {
     //   this.$note.css('bottom', 10)
     // }
@@ -79,7 +87,7 @@ export default class Note {
   delete() {
     $.post('/api/notes/delete', {
       id: this.id
-    }).done(function(ret){
+    }).done((ret) => {
       if(ret.status === 0){
         Toast('delete success')
         this.$note.remove()
@@ -107,6 +115,7 @@ export default class Note {
     $.post('/api/notes/add', {
       note: message
     }).done(ret => {
+      console.log(ret)
       if (ret.status === 0) {
         Toast('add success')
       } else {
