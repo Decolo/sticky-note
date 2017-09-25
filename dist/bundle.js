@@ -10634,18 +10634,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// NoteManager.loadNotes()
+__WEBPACK_IMPORTED_MODULE_2__modules_noteManager__["a" /* default */].loadNotes();
 
-// $('.add-note').on('click', function() {
-//   NoteManager.createNewNote()
-// })
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
-new __WEBPACK_IMPORTED_MODULE_3__modules_note__["a" /* default */]();
+__WEBPACK_IMPORTED_MODULE_5_jquery___default()('.add-note').on('click', function () {
+  __WEBPACK_IMPORTED_MODULE_2__modules_noteManager__["a" /* default */].createNewNote();
+});
+// new Note()
+// new Note()
+// new Note()
+// new Note()
+// new Note()
+// new Note()
+// new Note()
 
 __WEBPACK_IMPORTED_MODULE_0__modules_event__["a" /* default */].on('waterfall', function () {
   __WEBPACK_IMPORTED_MODULE_4__modules_waterFall__["a" /* default */].init(__WEBPACK_IMPORTED_MODULE_5_jquery___default()('#note-container'));
@@ -10692,7 +10692,7 @@ exports.i(__webpack_require__(8), "");
 exports.i(__webpack_require__(9), "");
 
 // module
-exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(10) + "); }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n#note-container {\n  position: relative;\n  margin: 40px; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 200px;\n    min-height: 200px;\n    position: absolute;\n    background-color: #D9C44F;\n    font-weight: 600;\n    color: #333;\n    box-shadow: 0 2px 4px #36675A; }\n    #note-container .note .note-head {\n      padding: 5px 10px;\n      text-align: center;\n      position: relative; }\n      #note-container .note .note-head .delete {\n        position: absolute;\n        right: 4px;\n        top: 2px;\n        transition: .3s;\n        opacity: .4; }\n      #note-container .note .note-head .delete:hover {\n        opacity: 1; }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
+exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(10) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%; }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n#note-container {\n  position: relative;\n  margin-top: 30px;\n  margin: 10px; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 160px;\n    min-height: 200px;\n    position: absolute;\n    background-color: #D9C44F;\n    font-weight: 600;\n    color: #333;\n    box-shadow: 0 2px 4px #36675A; }\n    #note-container .note .note-head {\n      padding: 5px 10px;\n      text-align: center;\n      position: relative; }\n      #note-container .note .note-head .delete {\n        position: absolute;\n        right: 4px;\n        top: 2px;\n        transition: .3s;\n        opacity: .4; }\n      #note-container .note .note-head .delete:hover {\n        opacity: 1; }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
 
 // exports
 
@@ -11233,7 +11233,7 @@ const NoteManager = function () {
   };
 }();
 
-/* unused harmony default export */ var _unused_webpack_default_export = (NoteManager);
+/* harmony default export */ __webpack_exports__["a"] = (NoteManager);
 
 /***/ }),
 /* 14 */

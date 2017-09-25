@@ -7,6 +7,9 @@ html,body{
     right: 0;
     bottom: 0;
     background-image: url('../imgs/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 .toast-container{
     position: absolute;
@@ -21,10 +24,11 @@ html,body{
 }
 #note-container{
     position: relative;
-    margin: 40px;
+    margin-top: 30px;
+    margin: 10px;
     .note{
         margin: 0 10px 20px 10px;
-        width: 200px;
+        width: 160px;
         min-height: 200px;
         position: absolute;
         background-color: #D9C44F;

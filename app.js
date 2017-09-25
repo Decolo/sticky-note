@@ -4,13 +4,13 @@ var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-// var passport = require('passport')
-// var session = require('express-session')
+var passport = require('passport')
+var session = require('express-session')
 
-var index = require('./routes/index')
-// var auth = require('./routes/auth')
+var home = require('./routes/home')
+var admin = require('./routes/admin')
+var auth = require('./routes/auth')
 var api = require('./routes/api')
-
 
 var app = express()
 
@@ -26,12 +26,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 // 静态文件
 app.use(express.static(path.join(__dirname, 'dist')))
-// app.use(session({ secret: 'zxjkjlkfj123jkjahs832dsjf' }))
-// app.use(passport.initialize())
-// app.use(passport.session())
+// session
+app.use(session({ 
+  secret: 'asdfjlcxjlksflkwqe',
+  resave: true,
+  saveUninitialized: true 
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
-app.use('/', index)
-// app.use('/auth', auth)
+app.use('/', home)
+app.use('/admin', admin)
+app.use('/auth', auth)
 app.use('/api', api)
 
 // catch 404 and forward to error handler
@@ -42,11 +48,10 @@ app.use(function(req, res, next) {
 })
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
-
   // render the error page
   res.status(err.status || 500)
   res.render('error')
