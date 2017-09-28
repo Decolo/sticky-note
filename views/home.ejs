@@ -1,8 +1,20 @@
-<title><%= title %></title>
-<div class="wrapper-login">
-  <% if (!user) { %>
-    <p>Welcome! Please <a href="/auth/github">log in</a>.</p>
-  <% } else { %>
-    <p>Hello, <%= user.username %>. View your <a href="/profile">profile</a>.</p>
-  <% } %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="wrapper-login">
+    <div class="login-dialog">
+      <h3>Welcome! Please log in by</h3>
+      <p class="github"><a href="/auth/github"><img src="/icon/github-square.svg"></a></p>
+    </div>
+  </div>
+  
+</body>
+</html>
+

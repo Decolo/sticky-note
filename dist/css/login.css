@@ -1,0 +1,26 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    font-weight: 900;
+    background-image: url('/9a6feac0b188b99787974e479b5a1e49.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.login-dialog{
+    text-align: center;
+    background-color: rgba(277, 251, 115, .8);
+    padding: 30px;
+    width: 240px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.github{
+    text-align: center;
+}
+.github img{
+    width: 70px;
+}
