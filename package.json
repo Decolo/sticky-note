@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=9000 nodemon --inspect ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "PORT=9000 nodemon --inspect ./bin/www",
     "webpack": "webpack --config ./src/webpack.config.js",
     "watch": "onchange 'src/**/*.js' 'src/**/*.scss' -- npm run webpack",
-    "dev": "webpack-dev-server --config ./src/webpack.config.js"
+    "devfe": "webpack-dev-server --config ./src/webpack.config.js"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
