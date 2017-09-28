@@ -26,9 +26,11 @@ html,body{
     transform: translate(-50%, -50%);
     padding: 5px;
     border-radius: 4px;
-    box-shadow: 0 1px 2px #aaa;
-    color: #555;
+    box-shadow: 0 1px 1px #D13144;
+    color: white;
     font-weight: 900;
+    background-color: #FC4D62;
+    
 }
 .topbar{
     color: white;
@@ -74,6 +76,7 @@ html,body{
         min-height: 160px;
         position: absolute;
         background-color: #e8e988;
+        border-radius: 8px;
         font-weight: 600;
         color: #333;
         .note-head{
@@ -104,5 +107,8 @@ html,body{
             position: relative;
             top: 10px;
         }
+    }
+    .note:focus{
+        transform: scale(1.2)
     }
 }
