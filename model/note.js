@@ -9,13 +9,17 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 })
 
 // 数据库自动还会添加一个id、createAt、upDateAt
-// id content 112233 223344
+// id content uidxxxxx 112233 223344
+// 新建一个表
 const Note = sequelize.define('note', {
   content: {
     type: Sequelize.STRING
+  },
+  uid : {
+    type: Sequelize.STRING
   }
 })
-
+Note.sync()
 module.exports = Note
 
 

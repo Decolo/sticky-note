@@ -31,10 +31,8 @@ export default class Note {
     if (!this.id) {
       // 设置placeholder
       this.$note.find('.note-content').html(this.opts.placeholderText)
-      this.opts.$ct.append(this.$note)
     } else {
       this.$note.find('.note-content').html(this.opts.content)
-      this.opts.$ct.append(this.$note)
     }
     
     
@@ -49,6 +47,7 @@ export default class Note {
       clearTimeout(this.clockId)
     }
     this.clockId = setTimeout(() => {
+      this.opts.$ct.append(this.$note)
       Event.trigger('waterfall')
     }, 100)
   }

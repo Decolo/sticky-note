@@ -18,6 +18,7 @@ $('.add-note').on('click', function() {
 // new Note()
 // new Note()
 // new Note()
+// new Note()
 
 Event.on('waterfall', function(){
   WaterFall.init($('#note-container'))

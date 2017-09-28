@@ -3,7 +3,7 @@ var router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  if (req.user) {
+  if (req.session.user) {
     res.render('admin', { 
       title: 'Sticky-Note',
       user: req.session.user

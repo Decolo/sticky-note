@@ -11,30 +11,73 @@ const router = express.Router()
 
 
 /* GET users listing. */
-router.get('/notes', (req, res, next) => {
-  Note.findAll({ raw: true }).then(notes => {
-    res.send({status: 0, data: notes})
-  })
+router.get('/notes', (req, res) => {
+  if (!req.session || !req.session.user) {
+    return res.send({ status: 1, message: 'should login first'})
+  }
+  const opts = { raw: true }
+  opts.where = { uid: req.session.user.id }
+  Note.findAll(opts)
+    .then(notes => {
+      res.send({status: 0, data: notes})
+    })
+    .catch(() => {
+      res.send({ status: 1, message: 'Errors in database'})
+    })
 })
-router.post('/notes/add', (req, res, next) => {
-  Note.create({ content: req.body.note })
+router.post('/notes/add', (req, res) => {
+  if (!req.session || !req.session.user) {
+    return res.send({ status: 1, message: 'should login first'})
+  }
+  if (!req.body.note) {
+    return res.send({ status: 1, message: 'content should not be empty' })
+  }
+  const opts = {
+    content: req.body.note,
+    uid: req.session.user.id
+  }
+  Note.create(opts)
     .then(() => {
       res.send({ status: 0 })
     })
     .catch(() => {
-      res.send({ status: 1, message: '数据库错误' })
+      res.send({ status: 1, message: 'errors in database' })
     })
 })
-router.post('/notes/edit', (req, res, next) => {
-  Note.update({ content: req.body.note }, { where: { id: req.body.id } })
+
+router.post('/notes/edit', (req, res) => {
+  if (!req.session || !req.session.user) {
+    return res.send({ status: 1, message: 'should login first' })
+  }
+  const content = req.body.note
+  const noteId = req.body.id
+  const uid = req.session.user.id
+
+  Note.update({ content }, { where: { id: noteId, uid } })
+    .then(items => {
+      if (items[0] === 0) {
+        return res.send({ status: 1, message: 'exceed authority' })
+      }
+      res.send({ status: 0 })
+    })
+    .catch(() => {
+      res.send({ status: 1, message: 'errors in database' })
+    })
+})
+
+router.post('/notes/delete', (req, res) => {
+  if(!req.session || !req.session.user){
+    return res.send({status: 1, errorMsg: '请先登录'})
+  }
+
+  const noteId = req.body.id
+  const uid = req.session.user.id
+  Note.destroy({ where: { id: noteId, uid } })
     .then(() => {
       res.send({ status: 0 })
     })
-})
-router.post('/notes/delete', (req, res, next) => {
-  Note.destroy({ where: { id: req.body.id } })
-    .then(() => {
-      res.send({ status: 0 })
+    .catch(() => {
+      res.send({ status: 1, message: 'errors in database' })
     })
 })
 

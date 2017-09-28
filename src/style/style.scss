@@ -22,6 +22,40 @@ html,body{
     color: #555;
     font-weight: 900;
 }
+.topbar{
+    color: white;
+    background-color: #84ccc9;
+    box-shadow:0 2px 2px #62b8b5;
+    ul::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .btns{
+        float:right;
+        padding: 10px 10px;
+        >ul>li{
+            float:left;
+        };
+        li:nth-of-type(2){
+            padding-left: 10px;
+        }
+    } 
+    .profile{
+        padding: 5px 10px;
+        float: left;
+        li{
+            float: left;
+        }
+        li:nth-of-type(2){
+            padding: 6px 10px;
+        }
+        img{
+            width: 30px;
+            display: block;
+        }
+    }
+}
 #note-container{
     position: relative;
     margin-top: 30px;
@@ -29,15 +63,16 @@ html,body{
     .note{
         margin: 0 10px 20px 10px;
         width: 160px;
-        min-height: 200px;
+        min-height: 160px;
         position: absolute;
-        background-color: #D9C44F;
+        background-color: #e8e988;
         font-weight: 600;
         color: #333;
         .note-head{
             padding: 5px 10px;
             text-align: center;
             position: relative;
+            font-size: 12px;
             .delete{
                 position: absolute;
                 right: 4px;
@@ -49,15 +84,14 @@ html,body{
             .delete:hover{
                 // transform: rotate(0deg);
                 opacity: 1;
+                transform: scale(1.5)
             }
         }
         .note-content{
             border: none;
             outline: none;
             padding: 10px;
-            
         }
-        box-shadow: 0 2px 4px #36675A;
         .draggable{
             position: relative;
             top: 10px;

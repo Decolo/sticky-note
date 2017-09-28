@@ -3,12 +3,31 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <script>
+      let avat
+    </script>
   </head>
   <body>
-    <a class="add-note" href="#">New Note</a>
-    <a class="logout" href="/auth/logout">LogOut</a>
-    <div id="note-container"></div>
-    <div class="stars"></div>
+    <div class="topbar">
+      <ul>
+        <li class="profile">
+          <ul>
+            <li><img src=<%= user.avatar %>></li>
+            <li><%= user.username %></li>
+          </ul>    
+        </li>
+        <li class="btns">
+          <ul>
+            <li><a class="add-note" href="#">new</a></li>
+            <li><a class="logout" href="/auth/logout">logout</a></li>
+          </ul> 
+        </li>
+      </ul>
+  </div>
+    <section>
+      <div id="note-container"></div>
+      <div class="stars"></div>
+    </section>
     <script src="bundle.js"></script>  
   </body>
 </html>

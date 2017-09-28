@@ -10516,10 +10516,8 @@ class Note {
     if (!this.id) {
       // 设置placeholder
       this.$note.find('.note-content').html(this.opts.placeholderText);
-      this.opts.$ct.append(this.$note);
     } else {
       this.$note.find('.note-content').html(this.opts.content);
-      this.opts.$ct.append(this.$note);
     }
 
     // if (!this.id) {
@@ -10533,6 +10531,7 @@ class Note {
       clearTimeout(this.clockId);
     }
     this.clockId = setTimeout(() => {
+      this.opts.$ct.append(this.$note);
       __WEBPACK_IMPORTED_MODULE_1__event__["a" /* default */].trigger('waterfall');
     }, 100);
   }
@@ -10646,6 +10645,7 @@ __WEBPACK_IMPORTED_MODULE_5_jquery___default()('.add-note').on('click', function
 // new Note()
 // new Note()
 // new Note()
+// new Note()
 
 __WEBPACK_IMPORTED_MODULE_0__modules_event__["a" /* default */].on('waterfall', function () {
   __WEBPACK_IMPORTED_MODULE_4__modules_waterFall__["a" /* default */].init(__WEBPACK_IMPORTED_MODULE_5_jquery___default()('#note-container'));
@@ -10692,7 +10692,7 @@ exports.i(__webpack_require__(8), "");
 exports.i(__webpack_require__(9), "");
 
 // module
-exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(10) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%; }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n#note-container {\n  position: relative;\n  margin-top: 30px;\n  margin: 10px; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 160px;\n    min-height: 200px;\n    position: absolute;\n    background-color: #D9C44F;\n    font-weight: 600;\n    color: #333;\n    box-shadow: 0 2px 4px #36675A; }\n    #note-container .note .note-head {\n      padding: 5px 10px;\n      text-align: center;\n      position: relative; }\n      #note-container .note .note-head .delete {\n        position: absolute;\n        right: 4px;\n        top: 2px;\n        transition: .3s;\n        opacity: .4; }\n      #note-container .note .note-head .delete:hover {\n        opacity: 1; }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
+exports.push([module.i, "html, body {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-image: url(" + __webpack_require__(10) + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%; }\n\n.toast-container {\n  position: absolute;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, -50%);\n  padding: 5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px #aaa;\n  color: #555;\n  font-weight: 900; }\n\n.topbar {\n  color: white;\n  background-color: #84ccc9;\n  box-shadow: 0 2px 2px #62b8b5; }\n  .topbar ul::after {\n    content: '';\n    display: block;\n    clear: both; }\n  .topbar .btns {\n    float: right;\n    padding: 10px 10px; }\n    .topbar .btns > ul > li {\n      float: left; }\n    .topbar .btns li:nth-of-type(2) {\n      padding-left: 10px; }\n  .topbar .profile {\n    padding: 5px 10px;\n    float: left; }\n    .topbar .profile li {\n      float: left; }\n    .topbar .profile li:nth-of-type(2) {\n      padding: 6px 10px; }\n    .topbar .profile img {\n      width: 30px;\n      display: block; }\n\n#note-container {\n  position: relative;\n  margin-top: 30px;\n  margin: 10px; }\n  #note-container .note {\n    margin: 0 10px 20px 10px;\n    width: 160px;\n    min-height: 160px;\n    position: absolute;\n    background-color: #e8e988;\n    font-weight: 600;\n    color: #333; }\n    #note-container .note .note-head {\n      padding: 5px 10px;\n      text-align: center;\n      position: relative;\n      font-size: 12px; }\n      #note-container .note .note-head .delete {\n        position: absolute;\n        right: 4px;\n        top: 2px;\n        transition: .3s;\n        opacity: .4; }\n      #note-container .note .note-head .delete:hover {\n        opacity: 1;\n        transform: scale(1.5); }\n    #note-container .note .note-content {\n      border: none;\n      outline: none;\n      padding: 10px; }\n    #note-container .note .draggable {\n      position: relative;\n      top: 10px; }\n", ""]);
 
 // exports
 
